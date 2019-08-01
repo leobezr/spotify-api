@@ -1,6 +1,6 @@
 # spotify-api
 
-###auth-server
+### auth-server
 Port: 8888
 ```
 npm install
@@ -8,7 +8,7 @@ cd authorization_code
 node app.js
 ```
 
-###front-end-challenge
+### front-end-challenge
 ```
 npm install
 npm start
