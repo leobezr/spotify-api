@@ -8,6 +8,8 @@ cd authorization_code
 node app.js
 ```
 
+[auth-server](https://github.com/leobezr/spotify-web-api-js)
+
 ### front-end-challenge
 ```
 npm install
