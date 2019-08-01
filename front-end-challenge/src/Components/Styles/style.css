@@ -1,0 +1,11 @@
+body {
+  color: #a0a0a0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(45deg, #181818 30%, #3c3c3c 130%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#181818', endColorstr='#3c3c3c',GradientType=1 );
+  min-height: 100vh;
+  height: 100%; }
+  body #root {
+    margin: -7px; }
+    body #root .btn.btn-success {
+      background-color: #2ab759; }
