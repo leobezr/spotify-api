@@ -1,0 +1,3 @@
+[submodule "module-auth-server"]
+	path = module-auth-server
+	url = https://github.com/leobezr/web-api-auth-examples.git
