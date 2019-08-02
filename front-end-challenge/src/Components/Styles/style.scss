@@ -4,9 +4,12 @@ $background: #181818;
 $black: #121212;
 $lightBlack: #282828;
 $bgInput: #a0a0a0;
+$color: #fff;
 
 $gradient: linear-gradient(45deg, #181818 30%, #3c3c3c 130%);
 $gradientFilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#181818', endColorstr='#3c3c3c',GradientType=1 );
+
+$transition: 200ms ease;
 
 body {
     color: $bgInput;
@@ -15,6 +18,7 @@ body {
     filter: $gradientFilter;
     min-height: 100vh;
     height: 100%;
+    overflow-x: hidden;
 
     #root {
         margin: -7px;
@@ -23,6 +27,94 @@ body {
             &.btn-success {
                 background-color: $primary;
             }
+            border-radius: 60px;
+        }
+        
+        #register {
+            opacity: 0;
+            animation: fadeUp $transition 1;
+            animation-fill-mode: forwards;
+            animation-delay: 500ms;
+        }
+
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            padding: 3em;
+            background: $background;
+            height: 100vh;
+            width: 40vw;
+
+            h3 {
+                color: $color;
+            }
+
+            &.swipe {
+                transform: translateX(110%);
+                transition: all $transition;                
+            }
+
+            @media (max-width:992px){
+                & {width: 100vw;}
+                h3 { text-align: center; }
+            }
+        }
+
+        #artista {
+            opacity: 0;
+            visibility: hidden;
+
+            background: $black;
+            margin-top: 3em;
+            padding: 3em;
+
+            &.show {
+                visibility: visible;
+                animation: fadeUp $transition 1;
+                animation-fill-mode: forwards;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                margin: 0;
+            }
+
+            h3 {
+                border-bottom: solid 1px $bgInput;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+
+            ul {
+                 
+                display: grid;
+                grid-template-columns: repeat(5, 20%);
+                grid-gap: 3px;
+                width: 100%;
+                grid-row-gap: 3px;
+
+                .box{
+                    display: flex;
+                    flex: 1;
+                    flex-direction: column;
+                }
+
+                @media (max-width: 992px){
+                    & {
+                        grid-template-columns:  repeat(2, 50%);
+                        grid-row-gap: 40px;
+                    }
+                }
+                
+            }
         }
     }
+
+}
+
+@keyframes fadeUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; }
 }

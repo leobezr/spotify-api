@@ -4,8 +4,89 @@ body {
   background: linear-gradient(45deg, #181818 30%, #3c3c3c 130%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#181818', endColorstr='#3c3c3c',GradientType=1 );
   min-height: 100vh;
-  height: 100%; }
-  body #root {
-    margin: -7px; }
-    body #root .btn.btn-success {
-      background-color: #2ab759; }
+  height: 100%;
+  overflow-x: hidden; }
+
+body #root {
+  margin: -7px; }
+
+body #root .btn {
+  border-radius: 60px; }
+
+body #root .btn.btn-success {
+  background-color: #2ab759; }
+
+body #root #register {
+  opacity: 0;
+  animation: fadeUp 200ms ease 1;
+  animation-fill-mode: forwards;
+  animation-delay: 500ms; }
+
+body #root .sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 3em;
+  background: #181818;
+  height: 100vh;
+  width: 40vw; }
+
+body #root .sidebar h3 {
+  color: #fff; }
+
+body #root .sidebar.swipe {
+  transform: translateX(110%);
+  transition: all 200ms ease; }
+
+@media (max-width: 992px) {
+  body #root .sidebar {
+    width: 100vw; }
+  body #root .sidebar h3 {
+    text-align: center; } }
+
+body #root #artista {
+  opacity: 0;
+  visibility: hidden;
+  background: #121212;
+  margin-top: 3em;
+  padding: 3em; }
+
+body #root #artista.show {
+  visibility: visible;
+  animation: fadeUp 200ms ease 1;
+  animation-fill-mode: forwards; }
+
+body #root #artista img {
+  width: 100%;
+  height: auto;
+  margin: 0; }
+
+body #root #artista h3 {
+  border-bottom: solid 1px #a0a0a0;
+  margin-bottom: 20px;
+  padding-bottom: 20px; }
+
+body #root #artista ul {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-gap: 3px;
+  width: 100%;
+  grid-row-gap: 3px; }
+
+body #root #artista ul .box {
+  display: flex;
+  flex: 1;
+  flex-direction: column; }
+
+@media (max-width: 992px) {
+  body #root #artista ul {
+    grid-template-columns: repeat(2, 50%);
+    grid-row-gap: 40px; } }
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0px);
+    opacity: 1; } }
