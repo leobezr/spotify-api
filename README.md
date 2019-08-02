@@ -15,3 +15,7 @@ node app.js
 npm install
 npm start
 ```
+
+### A pasta auth-server
+Não consegui compartilhar a pasta auth-server acredito q por ser um fork?
+Então coloquei o link no module-auth-server
